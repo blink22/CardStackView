@@ -194,6 +194,7 @@ public class MainActivity extends AppCompatActivity implements CardStackListener
         manager.setTranslationInterval(8.0f);
         manager.setScaleInterval(0.95f);
         manager.setSwipeThreshold(0.3f);
+        manager.setOverlayAlphaIncreasingRateScale(100.0f);
         manager.setMaxDegree(20.0f);
         manager.setDirections(Direction.HORIZONTAL);
         manager.setCanScrollHorizontal(true);

@@ -344,22 +344,22 @@ public class CardStackLayoutManager
         switch (direction) {
             case Left:
                 if (leftOverlay != null) {
-                    leftOverlay.setAlpha(state.getRatio());
+                    leftOverlay.setAlpha(state.getRatio() * setting.overlayAlphaIncreasingRateScale);
                 }
                 break;
             case Right:
                 if (rightOverlay != null) {
-                    rightOverlay.setAlpha(state.getRatio());
+                    rightOverlay.setAlpha(state.getRatio() * setting.overlayAlphaIncreasingRateScale);
                 }
                 break;
             case Top:
                 if (topOverlay != null) {
-                    topOverlay.setAlpha(state.getRatio());
+                    topOverlay.setAlpha(state.getRatio() * setting.overlayAlphaIncreasingRateScale);
                 }
                 break;
             case Bottom:
                 if (bottomOverlay != null) {
-                    bottomOverlay.setAlpha(state.getRatio());
+                    bottomOverlay.setAlpha(state.getRatio() * setting.overlayAlphaIncreasingRateScale);
                 }
                 break;
         }
@@ -460,6 +460,13 @@ public class CardStackLayoutManager
             throw new IllegalArgumentException("MaxDegree must be -360.0f to 360.0f");
         }
         setting.maxDegree = maxDegree;
+    }
+
+    public void setOverlayAlphaIncreasingRateScale(@FloatRange(from = 0.0f) float overlayAlphaIncreasingRateScale) {
+        if (overlayAlphaIncreasingRateScale < 0.0f) {
+            throw new IllegalArgumentException("OverlayAlphaIncreasingRateScale must be greater than or equal 0.0f.");
+        }
+        setting.overlayAlphaIncreasingRateScale = overlayAlphaIncreasingRateScale;
     }
 
     public void setDirections(@NonNull List<Direction> directions) {
