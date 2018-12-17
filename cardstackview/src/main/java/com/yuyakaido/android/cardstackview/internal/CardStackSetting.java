@@ -14,6 +14,7 @@ public class CardStackSetting {
     public float scaleInterval = 0.95f; // 0.0f - 1.0f
     public float swipeThreshold = 0.3f; // 0.0f - 1.0f
     public float maxDegree = 20.0f;
+    public float overlayAlphaIncreasingRateScale = 1.0f;
     public List<Direction> directions = Direction.HORIZONTAL;
     public boolean canScrollHorizontal = true;
     public boolean canScrollVertical = true;
